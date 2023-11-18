@@ -18,7 +18,7 @@ def test():
     """
     prompt = request.args.get('prompt')
 
-    return "Prompt: " + prompt
+    return "Test successful\nPrompt: " + prompt
 
 
 # you need an API key to use this endpoint
@@ -47,4 +47,4 @@ def gpt():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='127.0.0.1', port=5000)
