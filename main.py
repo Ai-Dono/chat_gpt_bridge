@@ -1,10 +1,10 @@
 from flask import Flask, request
-import openai
+from openai import OpenAI
 
 # to get an API key, login to your open-ai account and go to https://platform.openai.com/account/api-keys
-openai.api_key = "" # put your API key here
-openai.Model.list()
-
+client = OpenAI(
+    api_key="My API Key", # put your API key here
+)
 
 app = Flask(__name__)
 
@@ -32,12 +32,18 @@ def get_data():
     """
     # note : you can add a to the prompt to give the model some context
     prompt = request.args.get('prompt')
-
-    completions = openai.Completion.create(
-        model="gpt-3.5-turbo", prompt=prompt, max_tokens=1024, n=1, stop=None, temperature=0.7
+    
+    completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": prompt,
+        }
+    ],
+    model="gpt-3.5-turbo",
     )
     
-    return completions.choices[0].text.strip()
+    return completion.choices[0].message.content
 
 
 if __name__ == '__main__':
