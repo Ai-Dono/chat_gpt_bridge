@@ -13,6 +13,7 @@ Run the docker container :
 ```
 sudo docker run -p 5000:5000 chat_gpt_bridge
 ```
+NB : this repository only contains the dev version
 
 Then use port-forwarding to expose the app.
 
