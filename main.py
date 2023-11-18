@@ -9,7 +9,7 @@ client = OpenAI(
 app = Flask(__name__)
 
 @app.route('/test', methods=['GET'])
-def get_data():
+def test():
     """
     Returns the prompt that was sent to the server
 
@@ -23,7 +23,7 @@ def get_data():
 
 # you need an API key to use this endpoint
 @app.route('/gpt', methods=['GET'])
-def get_data():
+def gpt():
     """
     Transfer the query to the model and return the response
 
