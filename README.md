@@ -1,7 +1,7 @@
 
 # Chat-GPT Bridge
 
-**Server Side**
+## Server Side
 
 In the folder.
 Build the docker container : 
@@ -16,10 +16,11 @@ sudo docker run -p 5000:5000 chat_gpt_bridge
 
 Then use port-forwarding to expose the app.
 
+<br />
 
-**Client Side (python)**
+## Client Side (python)
 
-Test the app :
+**Test the app :**
 ```py
 import requests
 
@@ -36,7 +37,7 @@ response = requests.get(url, params=params)
 print(response.text)
 ```
 
-Use Chat-GPT :
+**Use Chat-GPT :**
 ```py
 import requests
 
@@ -53,11 +54,13 @@ response = requests.get(url, params=params)
 print(response.text)
 ```
 
-**Client Side (Linux)**
+<br />
+
+## Client Side (Linux)
 
 *These commands can be used in python too thanks to the os module*
 
-Test the app :
+**Test the app :**
 ```
 prompt="Your query goes here"
 url="http://YOUR_IP:YOUR_PORT"
@@ -66,7 +69,7 @@ url="http://YOUR_IP:YOUR_PORT"
 curl -X GET "$url/test" -G --data-urlencode "prompt=$prompt"
 ```
 
-Use Chat-GPT :
+**Use Chat-GPT :**
 ```
 prompt="Your query goes here"
 url="http://YOUR_IP:YOUR_PORT"
