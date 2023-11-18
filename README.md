@@ -60,17 +60,17 @@ print(response.text)
 Test the app :
 ```
 prompt="Your query goes here"
+url="http://YOUR_IP:YOUR_PORT"
 ```
-
 ```
-curl -X GET "http://YOUR_IP:YOUR_PORT/test" -G --data-urlencode "prompt=$prompt"
+curl -X GET "$url/test" -G --data-urlencode "prompt=$prompt"
 ```
 
 Use Chat-GPT :
 ```
 prompt="Your query goes here"
+url="http://YOUR_IP:YOUR_PORT"
 ```
-
 ```
-curl -X GET "http://YOUR_IP:YOUR_PORT/gpt" -G --data-urlencode "prompt=$prompt"
+curl -X GET "$url/gpt" -G --data-urlencode "prompt=$prompt"
 ```
